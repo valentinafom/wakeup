@@ -3,8 +3,7 @@ theme: /
     state: newNode_2
         SberCard:
             actions = [{"buttons":[],"type":"buttons"}]
-            imageUrl = https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Classic_alarm_clock_20180513.jpg/800px-Classic_alarm_clock_20180513.jpg
-            hash = 912e967be3040c6f9fd23b021ebd9a85
+            imageUrl = https://sberdevices2.s3pd01.sbercloud.ru/smartmarket-smide-prod/84366/84367/F3MZcHU6MMlueZQf.jpg
             button = {"name":"Во сколько вставать?","transition":"/newNode_1"}
             cardTitle = Нейробудильник Вставайка!
             description = Привет! Я нейробудильник! Я помогу подобрать оптимальное время сна и рассказать про рутину известных людей.
