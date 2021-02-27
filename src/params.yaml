@@ -1,0 +1,93 @@
+{
+    "catchAll": {
+        "phrases": [
+            "Извините, я не понимаю о чем вы",
+            "Я вас не понял"
+        ]
+    },
+    "fulfillment": {
+        "settings": {
+            "default": {
+                "url": ""
+            },
+            "channels": []
+        },
+        "actions": [
+            {
+                "state": "/newNode_1",
+                "action": "Имя экрана",
+                "color": "#EAEAEA"
+            },
+            {
+                "state": "/newNode_4",
+                "action": "Имя экрана",
+                "color": "#EAEAEA"
+            },
+            {
+                "state": "/newNode_6",
+                "action": "Имя экрана",
+                "color": "#EAEAEA"
+            },
+            {
+                "state": "/newNode_8",
+                "action": "Имя экрана",
+                "color": "#EAEAEA"
+            },
+            {
+                "state": "/newNode_9",
+                "action": "Имя экрана",
+                "color": "#EAEAEA"
+            },
+            {
+                "state": "/newNode_11",
+                "action": "Имя экрана",
+                "color": "#EAEAEA"
+            },
+            {
+                "state": "/newNode_12",
+                "action": "Имя экрана",
+                "color": "#EAEAEA"
+            },
+            {
+                "state": "/newNode_14",
+                "action": "Имя экрана",
+                "color": "#EAEAEA"
+            },
+            {
+                "state": "/newNode_15",
+                "action": "Имя экрана",
+                "color": "#EAEAEA"
+            },
+            {
+                "state": "/newNode_16",
+                "action": "Имя экрана",
+                "color": "#EAEAEA"
+            },
+            {
+                "state": "/newNode_17",
+                "action": "Имя экрана",
+                "color": "#EAEAEA"
+            },
+            {
+                "state": "/newNode_18",
+                "action": "Имя экрана",
+                "color": "#EAEAEA"
+            },
+            {
+                "state": "/newNode_20",
+                "action": "Имя экрана",
+                "color": "#EAEAEA"
+            },
+            {
+                "state": "/newNode_27",
+                "action": "Имя экрана",
+                "color": "#EAEAEA"
+            }
+        ]
+    },
+    "tariffLimit": {
+        "phrases": [
+            "Извините, работа временно приостановлена"
+        ]
+    }
+}
