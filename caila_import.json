@@ -1,7 +1,7 @@
 {
   "project" : {
-    "id" : "vstavajka-84429-VtI",
-    "name" : "vstavajka-84429-VtI",
+    "id" : "versiya_vstavajka-84366-Spv",
+    "name" : "versiya_vstavajka-84366-Spv",
     "folder" : "/jaicp"
   },
   "settings" : {
@@ -9,9 +9,6 @@
     "spellingCorrection" : false,
     "classificationAlgorithm" : "sts",
     "timezone" : "UTC",
-    "extendedSettings" : {
-      "tokenizerEngine" : "mystem"
-    },
     "shared" : false
   },
   "intents" : [ ],

@@ -3,7 +3,7 @@ theme: /
     state: newNode_2
         SberCard:
             actions = [{"buttons":[],"type":"buttons"}]
-            imageUrl = http://some-my-url/static/912e967be3040c6f9fd23b021ebd9a85
+            imageUrl = https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Classic_alarm_clock_20180513.jpg/800px-Classic_alarm_clock_20180513.jpg
             hash = 912e967be3040c6f9fd23b021ebd9a85
             button = {"name":"Во сколько вставать?","transition":"/newNode_1"}
             cardTitle = Нейробудильник Вставайка!
