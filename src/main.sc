@@ -1,3 +1,27 @@
+init:
+    bind("postProcess", function($context) {
+        var currentAnswer = $context.response.replies.reduce(function(allAnswers, reply) {
+            allAnswers += reply.type === "text" ? reply.text : "";
+            return allAnswers;
+        },"");
+
+        if(currentAnswer) {
+            if ($context.session.lastAnswer === currentAnswer) {
+                $context.response.replies = [
+                {
+                    "type":"text",
+                    "text":$context.session.lastAnswer
+                },            
+                {
+                    "type":"text",
+                    "text":"Что-то я повторяюсь"
+                }
+                ];
+            }
+        }
+        $context.session.lastAnswer = currentAnswer;
+    });  
+    
 theme: /
 
     state: Start
