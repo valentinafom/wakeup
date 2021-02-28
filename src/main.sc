@@ -55,7 +55,8 @@ theme: /
             go!: /newNode_6
 
         state: 2
-            e: Рутина
+            e!: Рутина
+            e!: Покажи привычки
 
             go!: /newNode_9
         init:
