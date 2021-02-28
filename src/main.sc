@@ -315,7 +315,7 @@ theme: /
             "iconUrl":"",
             "hash":"",
             "action":{"name":"заголовок 2"}}]
-            button = {"name":"кнопка","transition":"","enabled":false}            
+        button = {"name":"кнопка","transition":"","enabled":false}            
             
     state: celeb1
        image: 
