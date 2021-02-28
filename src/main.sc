@@ -11,7 +11,9 @@ theme: /
             #button = {"name":"","transition":""}
             button = {"name":"","transition":"/newNode_4"}
             cardTitle = Нейробудильник Вставайка!
-            description = Привет! Я - Вставайка. Я помогу подобрать оптимальное время сна и рассказать про утренние привычки известных людей.
+            description = Привет! Я - Вставайка. Я помогу подобрать оптимальное время утреннего подъёма и рассказать про привычки известных людей.
+        a: Нейросеть задаст вам пару вопросов и посоветует оптимальное время установки будильника на следующий день. Давайте попробуем!
+        go!: /newNode_5
     @IntentGroup
         {
           "boundsTo" : "/newNode_0",
@@ -72,6 +74,7 @@ theme: /
         state: 2
             e!: Рутина
             e!: Покажи привычки
+            e!: Привычки
             go!: /newNode_9
         init:
             $jsapi.bind({
@@ -152,13 +155,13 @@ theme: /
             });
 
     state: newNode_6
-        a: Сколько вам лет?
+        a: Для определения оптимальной продолжительности сна мне нужно узнать немного о Вас.
         go!: /newNode_7
 
     state: newNode_7
         InputNumber:
             actions = [{"buttons":[],"type":"buttons"}]
-            prompt = Введите число
+            prompt = Подскажите, сколько вам лет?
             varName = age
             failureMessage = ["Введите число ваших полных лет"]
             then = /newNode_8
@@ -236,19 +239,19 @@ theme: /
     state: newNode_16
         script:
             $session.wtime=8-(24-$session.DATETIME.hour)
-        a: Надо поставить будильник на {{$session.wtime}} часов
+        a: Я рекомендую поставить будильник на {{$session.wtime}} часов
         # Transition /newNode_24
         go!: /newNode_20
 
     state: newNode_17
         script:
             $session.wtime=6-(24-$session.DATETIME.hour)
-        a: Надо поставить будильник на {{$session.wtime}} часов
+        a: Я рекомендую поставить будильник на {{$session.wtime}} часов
         # Transition /newNode_25
         go!: /newNode_20
 
     state: newNode_20
-        a: Хотите узнать про утренние привычки известных людей?
+        a: Рассказать про утренние привычки известных людей?
         go!: /newNode_26
     @IntentGroup
         {
