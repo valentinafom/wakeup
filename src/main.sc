@@ -6,7 +6,7 @@ theme: /
             imageUrl = https://sberdevices2.s3pd01.sbercloud.ru/smartmarket-smide-prod/84366/84367/7YmJXXjOU4KvqMkX.PNG
             button = {"name":"Во сколько вставать?","transition":"/newNode_4"}
             cardTitle = Нейробудильник Вставайка!
-            description = Привет! Я нейробудильник. Я помогу подобрать оптимальное время сна и рассказать про рутину известных людей.
+            description = Привет! Я - Вставайка. Я помогу подобрать оптимальное время сна и рассказать про утренние привычки известных людей.
         
 
     state: newNode_4
@@ -117,7 +117,7 @@ theme: /
     state: newNode_7
         InputNumber:
             actions = [{"buttons":[],"type":"buttons"}]
-            prompt = Введите число
+            #prompt = Введите число
             varName = age
             failureMessage = ["Введите число ваших полных лет"]
             then = /newNode_8
