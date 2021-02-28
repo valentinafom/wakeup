@@ -280,17 +280,19 @@ init:
             return allAnswers;
         },"");
 
-        if (currentAnswer and $context.session.lastAnswer === currentAnswer) {
-            $context.response.replies = [
-            {
-                "type":"text",
-                "text":$context.session.lastAnswer
-            },            
-            {
-                "type":"text",
-                "text":"Что-то я повторяюсь"
+        if(currentAnswer) {
+            if ($context.session.lastAnswer === currentAnswer) {
+                $context.response.replies = [
+                {
+                    "type":"text",
+                    "text":$context.session.lastAnswer
+                },            
+                {
+                    "type":"text",
+                    "text":"Что-то я повторяюсь"
+                }
+                ];
             }
-            ];
         }
         $context.session.lastAnswer = currentAnswer;
     });        
