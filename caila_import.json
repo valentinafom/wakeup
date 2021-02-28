@@ -119,5 +119,5 @@
       "value" : ""
     } ]
   } ],
-  "enabledSystemEntities" : [ ]
+  "enabledSystemEntities" : [ "duckling.time", "duckling.date", "duckling.time-of-day", "zb.datetime" ]
 }
