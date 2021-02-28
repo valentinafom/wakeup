@@ -2,7 +2,7 @@ theme: /
 
 state: Start
 		q!: $regex</start>
-        go!: /newNode_5
+        go!: /newNode_2
 
     state: newNode_2
         SberCard:
