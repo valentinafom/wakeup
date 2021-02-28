@@ -1,6 +1,6 @@
 theme: /
 
-state: Start
+    state: Start
 		q!: $regex</start>
         go!: /newNode_2
 
