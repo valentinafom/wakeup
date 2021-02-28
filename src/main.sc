@@ -17,8 +17,7 @@ theme: /
         script:
             var reply = {
                 "type":"text",
-                "txt": "aksdaksjd"
-                "tts":"мой ответ",
+                "tts":"Привет! Я - Вставайка. Я помогу подобрать оптимальное время утреннего подъёма и рассказать про привычки известных людей."
             };
             $response.replies = $response.replies || [];
             $response.replies.push(reply);
