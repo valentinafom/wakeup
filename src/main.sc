@@ -9,6 +9,10 @@ init:
             $context.response.replies = [
             {
                 "type":"text",
+                "text":$context.session.lastAnswer
+            }            
+            {
+                "type":"text",
                 "text":"Что-то я повторяюсь"
             }
             ];
