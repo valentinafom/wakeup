@@ -1,7 +1,7 @@
 {
   "project" : {
-    "id" : "vstavajka-84429-VtI",
-    "name" : "vstavajka-84429-VtI",
+    "id" : "versiya_vstavajka-84366-Spv",
+    "name" : "versiya_vstavajka-84366-Spv",
     "folder" : "/jaicp"
   },
   "settings" : {
@@ -9,12 +9,115 @@
     "spellingCorrection" : false,
     "classificationAlgorithm" : "sts",
     "timezone" : "UTC",
-    "extendedSettings" : {
-      "tokenizerEngine" : "mystem"
-    },
     "shared" : false
   },
-  "intents" : [ ],
-  "entities" : [ ],
-  "enabledSystemEntities" : [ ]
+  "intents" : [ {
+    "id" : 133968,
+    "path" : "/routine",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ ],
+    "patterns" : [ ],
+    "slots" : [ {
+      "name" : "routine",
+      "entity" : "celebrity",
+      "required" : true,
+      "prompts" : [ "Покажи рутину $celebrity" ],
+      "array" : true
+    } ]
+  } ],
+  "entities" : [ {
+    "entity" : {
+      "id" : 75434,
+      "name" : "celebrity",
+      "enabled" : true,
+      "shared" : false,
+      "type" : "annotation",
+      "priority" : 1,
+      "noSpelling" : false,
+      "noMorph" : false
+    },
+    "records" : [ {
+      "id" : 7509783,
+      "type" : "synonyms",
+      "rule" : [ "Тони Роббинс" ],
+      "value" : ""
+    }, {
+      "id" : 7509784,
+      "type" : "synonyms",
+      "rule" : [ "Ричард Брэнсон" ],
+      "value" : ""
+    }, {
+      "id" : 7512314,
+      "type" : "synonyms",
+      "rule" : [ "Сальвадор Дали" ],
+      "value" : ""
+    }, {
+      "id" : 7512315,
+      "type" : "synonyms",
+      "rule" : [ "Ричард Бакминстер Фуллер" ],
+      "value" : ""
+    }, {
+      "id" : 7512316,
+      "type" : "synonyms",
+      "rule" : [ "Леонардо Да Винчи" ],
+      "value" : ""
+    }, {
+      "id" : 7512317,
+      "type" : "synonyms",
+      "rule" : [ "Уинстон Черчиль" ],
+      "value" : ""
+    }, {
+      "id" : 7512318,
+      "type" : "synonyms",
+      "rule" : [ "Никола Тесла" ],
+      "value" : ""
+    }, {
+      "id" : 7512319,
+      "type" : "synonyms",
+      "rule" : [ "Марк Цукерберг" ],
+      "value" : ""
+    }, {
+      "id" : 7512320,
+      "type" : "synonyms",
+      "rule" : [ "Джек Дорси" ],
+      "value" : ""
+    }, {
+      "id" : 7512321,
+      "type" : "synonyms",
+      "rule" : [ "Илон Маск" ],
+      "value" : ""
+    }, {
+      "id" : 7512322,
+      "type" : "synonyms",
+      "rule" : [ "Барак Обама" ],
+      "value" : ""
+    }, {
+      "id" : 7512323,
+      "type" : "synonyms",
+      "rule" : [ "Опра Уинфри" ],
+      "value" : ""
+    }, {
+      "id" : 7512324,
+      "type" : "synonyms",
+      "rule" : [ "Стив Джобс" ],
+      "value" : ""
+    }, {
+      "id" : 7512325,
+      "type" : "synonyms",
+      "rule" : [ "Маргарет Тэтчер" ],
+      "value" : ""
+    }, {
+      "id" : 7512326,
+      "type" : "synonyms",
+      "rule" : [ "Бенджамин Франклин" ],
+      "value" : ""
+    }, {
+      "id" : 7512327,
+      "type" : "synonyms",
+      "rule" : [ "Арнольд Шварценеггер" ],
+      "value" : ""
+    } ]
+  } ],
+  "enabledSystemEntities" : [ "duckling.time", "duckling.date", "duckling.time-of-day", "zb.datetime", "mlps-obscene.obscene", "mystem.obsc", "duckling.number", "duckling.duration" ]
 }

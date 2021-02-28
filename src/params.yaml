@@ -12,8 +12,7 @@
             },
             "channels": []
         },
-        "actions": [
-            {
+        "actions": [         {
                 "state": "/newNode_1",
                 "action": "Имя экрана",
                 "color": "#EAEAEA"
@@ -82,12 +81,6 @@
                 "state": "/newNode_27",
                 "action": "Имя экрана",
                 "color": "#EAEAEA"
-            }
-        ]
-    },
-    "tariffLimit": {
-        "phrases": [
-            "Извините, работа временно приостановлена"
-        ]
+            }]
     }
 }

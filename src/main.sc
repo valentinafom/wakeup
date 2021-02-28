@@ -1,37 +1,53 @@
+
 theme: /
 
-    state: newNode_2
+    state: Start
+        q!: $regex</start>
+        q!: старт
+        q!: салют
+        go!: /Hello_World
+
+    state: Hello_World
         SberCard:
-            actions = [{"buttons":[],"type":"buttons"}]
-            imageUrl = http://some-my-url/static/912e967be3040c6f9fd23b021ebd9a85
-            hash = 912e967be3040c6f9fd23b021ebd9a85
-            button = {"name":"Во сколько вставать?","transition":"/newNode_1"}
+            actions = [{"buttons":[{ "name": "Будильник", "transition": "/alarm_intro"}, {"name" : "Расскажи про известных людей", "transition" : "/celebrity_Intro"}, {"name" : "Помощь", "transition" : "/help"}],"type":"buttons"}]
+            imageUrl = https://sberdevices2.s3pd01.sbercloud.ru/smartmarket-smide-prod/84366/84367/7YmJXXjOU4KvqMkX.PNG
+            button = {"name":"","transition":"/newNode_4"}
             cardTitle = Нейробудильник Вставайка!
-            description = Привет! Я нейробудильник! Я помогу подобрать оптимальное время сна и рассказать про рутину известных людей.
+            description = Привет! Я - Вставайка. Я помогу подобрать оптимальное время утреннего подъёма и рассказать про привычки известных людей.
+        script:
+            var reply = {
+                "type":"text",
+                "tts":"мой ответ",
+            };
+            $response.replies = $response.replies || [];
+            $response.replies.push(reply);
+    
 
     state: newNode_4
-        a: Нейросеть задаст вам пару вопросов и посоветует оптимальное время установки будильника на следующий день!  Просто скажи - "Будильник"
-        a: Познакомим с утренним расписанием известных людей, их рутиной ) Просто скажи - "Рутина"
-        go!: /newNode_5
-    @IntentGroup
-        {
-          "boundsTo" : "/newNode_4",
-          "actions" : [ {
-            "buttons" : [ ],
-            "type" : "buttons"
-          } ],
-          "global" : false
-        }
+        a: Я задам Вам пару вопросов, а нейросеть на основе Ваших ответов посоветует оптимальное время установки будильника на следующий день. Давайте попробуем!
+        go!: /ageInputScreen
+
     state: newNode_5
         state: 1
-            e: Будильник
+            e!: Будильник
+            e!: Во сколько вставать
+            e!: Поставь будильник
+            e!: Время сна
+            e!: Подъём
 
-            go!: /newNode_6
+            go!: /alarm_intro
 
         state: 2
-            e: Рутина
-
-            go!: /newNode_9
+            e!: Рутина
+            e!: Покажи привычки
+            e!: Привычки
+            e!: Привычки известных людей
+            go!: /celebrity_Intro
+        state: 3
+            e!: Помощь
+            e!: Как это работает
+            e!: Что ты умеешь?
+            go!: /help
         init:
             $jsapi.bind({
                 type: "postProcess",
@@ -41,6 +57,7 @@ theme: /
                 }
             });
 
+#кандидат а удаление
     state: newNode_1
         a: Я могу подсказать наилучшее время для будильника!
         a: Даже показать утреннюю рутину известных людей!
@@ -55,16 +72,17 @@ theme: /
           } ],
           "global" : true
         }
+    
     state: newNode_3
         state: 1
             e!: Будильник
 
-            go!: /newNode_6
+            go!: /alarm_intro
 
         state: 2
             e!: Рутина
 
-            go!: /newNode_9
+            go!: /celebrity_Intro
 
         state: 3
             e!: Подсказка
@@ -79,12 +97,12 @@ theme: /
                 }
             });
 
-    state: newNode_9
+    state: celebrity_Intro
         a: Показать списком (Скажите "Список", или назовёте определённое имя (Скажите "Имя")?
-        go!: /newNode_29
+        go!: /celebrity_list
     @IntentGroup
         {
-          "boundsTo" : "/newNode_9",
+          "boundsTo" : "/celebrity_Intro",
           "actions" : [ {
             "buttons" : [ ],
             "type" : "buttons"
@@ -95,12 +113,12 @@ theme: /
         state: 1
             e: Список
 
-            go!: /
+            go!: /celebrity_list
 
         state: 2
             e: Имя
 
-            go!: /
+            go!: /celeb1
         init:
             $jsapi.bind({
                 type: "postProcess",
@@ -110,14 +128,14 @@ theme: /
                 }
             });
 
-    state: newNode_6
-        a: Сколько вам лет?
-        go!: /newNode_7
+    state: alarm_intro
+        a: Для определения оптимальной продолжительности сна мне нужно узнать немного о Вас.
+        go!: /ageInputScreen
 
-    state: newNode_7
+    state: ageInputScreen
         InputNumber:
             actions = [{"buttons":[],"type":"buttons"}]
-            prompt = Введите число
+            prompt = Подскажите, сколько вам лет?
             varName = age
             failureMessage = ["Введите число ваших полных лет"]
             then = /newNode_8
@@ -139,7 +157,6 @@ theme: /
     state: newNode_13
         state: 1
             q: $DATETIME
-
             go!: /newNode_11
 
         state: Fallback
@@ -195,19 +212,19 @@ theme: /
     state: newNode_16
         script:
             $session.wtime=8-(24-$session.DATETIME.hour)
-        a: Надо поставить будильник на {{$session.wtime}} часов
+        a: Я рекомендую поставить будильник на {{$session.wtime}} часов
         # Transition /newNode_24
         go!: /newNode_20
 
     state: newNode_17
         script:
             $session.wtime=6-(24-$session.DATETIME.hour)
-        a: Надо поставить будильник на {{$session.wtime}} часов
+        a: Я рекомендую поставить будильник на {{$session.wtime}} часов
         # Transition /newNode_25
         go!: /newNode_20
 
     state: newNode_20
-        a: Хотите узнать про утренние привычки известных людей?
+        a: Рассказать про утренние привычки известных людей?
         go!: /newNode_26
     @IntentGroup
         {
@@ -222,7 +239,7 @@ theme: /
         state: 1
             q: $AGREEMENT
 
-            go!: /newNode_9
+            go!: /celebrity_Intro
 
         state: 2
             q: $NEGATION
@@ -243,3 +260,148 @@ theme: /
 
     state: newNode_28
         EndSession:
+        
+    state: help
+        a: Нейросеть задаст вам пару вопросов и посоветует оптимальное время установки будильника на следующий день!  Просто скажи - "Будильник"
+        a: Познакомим с утренним расписанием известных людей, их рутиной ) Просто скажи - "Рутина"
+        go!: /newNode_5
+        script:
+            var reply = {
+                "type":"text",
+                "text":"Нейросеть задаст вам пару вопросов и посоветует оптимальное время установки будильника на следующий день!  Просто скажи - 'Будильник'. Так же я познакомлю тебя с утренними ритуалами известных людей. Просто скажи - 'Рутина'",
+                "tts":"Нейросеть задаст вам пару вопросов и посоветует оптимальное время установки будильника на следующий день. Так же я познакомлю тебя с утренними ритуалами известных людей",
+            };
+            $response.replies = $response.replies || [];
+            $response.replies.push(reply);        
+    @IntentGroup
+        {
+          "boundsTo" : "/newNode_4",
+          "actions" : [ {
+            "buttons" : [ ],
+            "type" : "buttons"
+          } ],
+          "global" : false
+        }
+    
+    state: celebrity_list
+        CardList:
+            actions = [{"buttons":[],"type":"buttons"}]
+            listTitle = это список
+            listSubtitle = подзаголовок
+            listItems = [{"title":"заголовок 1","value":"значение","subtitle":"подзаголовок","iconUrl":"https://sberdevices2.s3pd01.sbercloud.ru/smartmarket-smide-prod/84366/84367/fLQv202P6WiFKglU.jpg","hash":"36ba9472055289ea0614b28159b65405","action":{"name":"заголовок 1"}},{"title":"заголовок 2","value":"значение2","subtitle":"подзаголовок","iconUrl":"","hash":"","action":{"name":"заголовок 2"}}]
+            button = {"name":"Ещё","transition":"/celebrity_random","enabled":false}
+        
+            
+    state: celebrity_random
+        CardList:
+            actions = [{"buttons":[],"type":"buttons"}]
+            listTitle = это список
+            listSubtitle = подзаголовок
+            listItems = [{"title":"заголовок 1","value":"значение","subtitle":"подзаголовок","iconUrl":"https://sberdevices2.s3pd01.sbercloud.ru/smartmarket-smide-prod/84366/84367/fLQv202P6WiFKglU.jpg","hash":"36ba9472055289ea0614b28159b65405","action":{"name":"заголовок 1"}},{"title":"заголовок 2","value":"значение2","subtitle":"подзаголовок","iconUrl":"","hash":"","action":{"name":"заголовок 2"}}]
+            button = {"name":"Ещё","transition":"/celebrity_random","enabled":false}
+            
+    state: celeb1
+       image: 
+       a: Сальвадор Дали и Леонардо Да Винчи спали 6 раз в сутки по 20 минут каждые 4 часа.
+       buttons:
+           "Будильник" -> /alarm_intro
+           "Помощь" -> /help
+           "Ещё" -> /celebrity_random
+    state: celeb2
+       image: 
+       a: Американский архитектор, дизайнер, инженер, изобретатель, философ, математик, писатель, поэт спал 4 раза в сутки по 30 минут каждые 6 часов.
+       buttons:
+           "Будильник" -> /alarm_intro
+           "Помощь" -> /help
+           "Ещё" -> /celebrity_random
+    state: celeb3
+       image: 
+       a: Уинстон Черчиль спал 6,5 часов в сутки: 5 часов ночью и полтора часа днем. Он просыпался в 7:30, завтракал, читал газеты и работал, находясь в постели. Только к 11:00 Черчилль выходил на прогулку в сад и наливал себе виски с содовой. Не все так могут - продуктивно работать в постели!
+       buttons:
+           "Будильник" -> /alarm_intro
+           "Помощь" -> /help
+           "Ещё" -> /celebrity_random
+    state: celeb4
+       image: 
+       a: Тесла спал всего 2 часа ночью и 20 минут днём
+       buttons:
+           "Будильник" -> /alarm_intro
+           "Помощь" -> /help
+           "Ещё" -> /celebrity_random
+    state: celeb5
+       image: 
+       a: Мне не удалось найти сколько спит Марк Цукерберг, но с утра он не заморачивается выбором одежды - это позволяет ему принимать на одно решение в день меньше
+       buttons:
+           "Будильник" -> /alarm_intro
+           "Помощь" -> /help
+           "Ещё" -> /celebrity_random
+    state: celeb6
+       image: 
+       a: После пробуждения создатель Твиттера занимается медитацией, а потом отправляется на пробежку в 10 километров.
+       buttons:
+           "Будильник" -> /alarm_intro
+           "Помощь" -> /help
+           "Ещё" -> /celebrity_random
+    state: celeb7
+       image: 
+       a: Миллиардер очень много работает, но всегда спит по шесть часов. Его утро начинается в 7:00, первым делом он проверяет почту и в течение получаса отвечает на самые важные и срочные письма. Бизнесмен не всегда успевает позавтракать, но никогда не пренебрегает душем.
+       buttons:
+           "Будильник" -> /alarm_intro
+           "Помощь" -> /help
+           "Ещё" -> /celebrity_random
+    state: celeb8
+       image: 
+       a: В 6:45 утра экс-президент США обязательно тренируется, совмещая силовые упражнения с кардио. После завтракает с семьёй и помогает дочкам собраться в школу.
+       buttons:
+           "Будильник" -> /alarm_intro
+           "Помощь" -> /help
+           "Ещё" -> /celebrity_random
+    state: celeb9
+       image: 
+       a: Одна из самых влиятельных женщин в мире по версии журнала Forbes начинает своё утро с 20 минут медитации, затем не менее 15 минут на беговой дорожке и — самое важное — сбалансированный завтрак, состоящий из белков, жиров и сложных углеводов.
+       buttons:
+           "Будильник" -> /alarm_intro
+           "Помощь" -> /help
+           "Ещё" -> /celebrity_random
+    state: celeb10
+       image: 
+       a: Создатель IPhone просыпался в шесть утра, подходил к зеркалу и спрашивал себя: «Если бы сегодня был последний день моей жизни, был бы я счастлив от того, что собираюсь сделать?». Работал до тех пор, пока не проснулись дети, завтракал с семьей, а затем опять возвращался к работе.
+       buttons:
+           "Будильник" -> /alarm_intro
+           "Помощь" -> /help
+           "Ещё" -> /celebrity_random
+    state: celeb11
+       image: 
+       a: Даже затянувшиеся допоздна деловые встречи не мешали Железной леди проснуться следующим утром в пять часов, чтобы послушать любимую передачу о еде и сельском хозяйстве по радио.
+       buttons:
+           "Будильник" -> /alarm_intro
+           "Помощь" -> /help
+           "Ещё" -> /celebrity_random
+    state: celeb12
+       image: 
+       a: У Бенджамина Франклина день буквально был расписан по часам. Утренняя рутина занимала у политика три часа. Он просыпался в пять утра, умывался, завтракал и планировал свой день. А ещё утром Франклин обязательно задавал себе вопрос: «Что хорошего я сделаю сегодня?» И в восемь он уже начинал работать.
+       buttons:
+           "Будильник" -> /alarm_intro
+           "Помощь" -> /help
+           "Ещё" -> /celebrity_random
+    state: celeb13
+       image: 
+       a: Вот так выгрядит утро терминатора: подъем в 5 утра, чтение новостей, проверка почты, 45-минутные упражнения, завтрак, душ и вперёд за работу!
+       buttons:
+           "Будильник" -> /alarm_intro
+           "Помощь" -> /help
+           "Ещё" -> /celebrity_random
+    state: celeb14
+       image: 
+       a: Так выглядит утро известного инфоцыгана Тони Робинса: ранний подъем, дыхательные упражнения, десятиминутная визуализация, 15-30 минут физических упражнений
+       buttons:
+           "Будильник" -> /alarm_intro
+           "Помощь" -> /help
+           "Ещё" -> /celebrity_random
+    state: celeb15
+       image: 
+       a: Один из самых богатых жителей Великобритании с состоянием более чем 5 миллиардов долларов США просыпается в 5:45, затем идёт плавать или играть в теннис, после таких утренних упражнений завтракает.
+       buttons:
+           "Будильник" -> /alarm_intro
+           "Помощь" -> /help
+           "Ещё" -> /celebrity_random
