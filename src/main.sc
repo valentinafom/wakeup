@@ -1,5 +1,9 @@
 theme: /
 
+state: Start
+		q!: $regex</start>
+        go!: /newNode_5
+
     state: newNode_2
         SberCard:
             actions = [{"buttons":[],"type":"buttons"}]
