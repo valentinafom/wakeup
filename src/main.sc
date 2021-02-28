@@ -41,6 +41,11 @@ theme: /
             e!: Привычки
             e!: Привычки известных людей
             go!: /celebrity_Intro
+        state: 3
+            e!: Помощь
+            e!: Как это работает
+            e!: Что ты умеешь?
+            go!: /help
         init:
             $jsapi.bind({
                 type: "postProcess",
