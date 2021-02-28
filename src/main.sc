@@ -278,7 +278,7 @@ theme: /
     
     state: celebrity_list
         CardList:
-            actions = [{"buttons":[{ "name": "Будильник", "transition": "/alarm_intro"}, {"name" : "Случайная история", "transition" : "/celebrity_Intro","type":"buttons"}]
+            actions = [{"buttons":[{ "name": "Будильник", "transition": "/alarm_intro"}, {"name" : "Случайная история", "transition" : "/celebrity_Intro"}, {"name" :"Помощь", "transition" : "/help"}], "type":"buttons"}]
             listTitle = это список
             listSubtitle = подзаголовок
             listItems = [{
