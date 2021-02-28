@@ -1,11 +1,12 @@
 init:
     bind("postProcess", function($context) {
-        var currentAnswer = $context.response.replies.reduce(function(allAnswers, reply) {
+        if(allAnswers) {
+            var currentAnswer = $context.response.replies.reduce(function(allAnswers, reply) {
             allAnswers += reply.type === "text" ? reply.text : "";
             return allAnswers;
         },"");
 
-        if($context.session.lastAnswer) {
+            if($context.session.lastAnswer) {
             if ($context.session.lastAnswer === currentAnswer) {
                 $context.response.replies = [
                 {
@@ -19,7 +20,8 @@ init:
                 ];
             }
         }
-        $context.session.lastAnswer = currentAnswer;
+            $context.session.lastAnswer = currentAnswer;
+        }
     });  
     
 theme: /newNode_2
