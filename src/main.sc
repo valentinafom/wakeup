@@ -98,25 +98,21 @@ theme: /
             });
 
     state: celebrity_Intro
-        a: Показать списком (Скажите "Список", или назовёте определённое имя (Скажите "Имя")?
-        go!: /celebrity_list
-    @IntentGroup
-        {
-          "boundsTo" : "/celebrity_Intro",
-          "actions" : [ {
-            "buttons" : [ ],
-            "type" : "buttons"
-          } ],
-          "global" : false
-        }
+        a: Посмотрим привычки известных людей? ||tts="Я подобрала для Вас одних из самых успешных людей на сегодняшний день!Возможно, какие-то привычки Вы возьмёте себе не вооружение! Давай, начнём?", ttsEnabled = true, ssmlEnabled = false
+        go!:  /celeb_agreement
+        buttons:
+            "Будильник" -> /alarm_intro
+            "Рутина" -> /celebrity_random
+            "Помощь" -> /help
+    
     state: newNode_29
         state: 1
-            e: Список
+            e: Покажи список
 
             go!: /celebrity_list
 
         state: 2
-            e: Имя
+            e: Расскажи что-нибудь
 
             go!: /celeb1
         init:
@@ -221,11 +217,11 @@ theme: /
             $session.wtime=6-(24-$session.DATETIME.hour)
         a: Я рекомендую поставить будильник на {{$session.wtime}} часов
         # Transition /newNode_25
-        go!: /newNode_20
+        go!: /celebrity_Intro
 
     state: newNode_20
         a: Рассказать про утренние привычки известных людей?
-        go!: /newNode_26
+        go!: /celeb_agreement
     @IntentGroup
         {
           "boundsTo" : "/newNode_20",
@@ -235,7 +231,7 @@ theme: /
           } ],
           "global" : false
         }
-    state: newNode_26
+    state: celeb_agreement
         state: 1
             q: $AGREEMENT
 
@@ -248,8 +244,8 @@ theme: /
         init:
             $jsapi.bind({
                 type: "postProcess",
-                path: "/newNode_26",
-                name: "newNode_26 buttons",
+                path: "/celeb_agreement",
+                name: "celeb_agreement buttons",
                 handler: function($context) {
                 }
             });
@@ -263,7 +259,13 @@ theme: /
         
     state: help
         a: Узнай оптимальное время для установки будильника!. Или узнай какие утренние привычки в ходу у известных людей. В любой момент ты можешь спросить меня "Что ты умеешь"! || tts = "Узнай оптимальное время для установки будильника! Просто скажи - "Будильник". Или узнай какие утренние привычки в ходу у известных людей. Скажи - "Рутина". В любой момент ты можешь спросить меня "Помощь" или "Что ты умеешь" и я напомню голосовые команды", ttsEnabled = true, ssmlEnabled = false
-        go!: /newNode_5
+        buttons:
+            "Будильник" -> /alarm_intro
+            "Рутина" -> /celebrity_Intro
+            "Помощь" -> /help
+        random:
+            go!: /alarm_intro
+            go!: /celebrity_Intro
         script:
             var reply = {
                 "type":"text",
@@ -292,12 +294,22 @@ theme: /
         
             
     state: celebrity_random
-        CardList:
-            actions = [{"buttons":[],"type":"buttons"}]
-            listTitle = это список
-            listSubtitle = подзаголовок
-            listItems = [{"title":"заголовок 1","value":"значение","subtitle":"подзаголовок","iconUrl":"https://sberdevices2.s3pd01.sbercloud.ru/smartmarket-smide-prod/84366/84367/fLQv202P6WiFKglU.jpg","hash":"36ba9472055289ea0614b28159b65405","action":{"name":"заголовок 1"}},{"title":"заголовок 2","value":"значение2","subtitle":"подзаголовок","iconUrl":"","hash":"","action":{"name":"заголовок 2"}}]
-            button = {"name":"Ещё","transition":"/celebrity_random","enabled":false}
+        go!: /celeb1
+        go!: /celeb2
+        go!: /celeb3
+        go!: /celeb4
+        go!: /celeb5
+        go!: /celeb6
+        go!: /celeb7
+        go!: /celeb8
+        go!: /celeb9
+        go!: /celeb10
+        go!: /celeb11
+        go!: /celeb12
+        go!: /celeb13
+        go!: /celeb14
+        go!: /celeb15
+        
             
     state: celeb1
        image: 
