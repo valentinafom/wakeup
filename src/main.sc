@@ -8,6 +8,7 @@ theme: /
             #button = {"name":"Во сколько вставать?","transition":"/newNode_4"}
             cardTitle = Нейробудильник Вставайка!
             description = Привет! Я - Вставайка. Я помогу подобрать оптимальное время сна и рассказать про утренние привычки известных людей.
+        go!: /newNode_5
     @IntentGroup
         {
           "boundsTo" : "/newNode_0",
