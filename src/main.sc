@@ -6,14 +6,14 @@ theme: /
 
     state: newNode_2
         SberCard:
-            actions = [{
-             "buttons":[ {
-              "name" : "Будильник",
-              "transition" : "/newNode_5"
-            }, {
-              "name" : "Расскажи про известных людей",
-              "transition" : "/newNode_2"
-            } ],
+            "actions" : [ {
+                "buttons" : [ {
+                  "name" : "Будильник",
+                  "transition" : "/newNode_5"
+                }, {
+                  "name" : "Расскажи про известных людей",
+                  "transition" : "/newNode_2"
+                } ],
             "type":"buttons"}]
             imageUrl = https://sberdevices2.s3pd01.sbercloud.ru/smartmarket-smide-prod/84366/84367/7YmJXXjOU4KvqMkX.PNG
             #button = {"name":"","transition":""}
