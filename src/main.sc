@@ -7,7 +7,7 @@ theme: /
 
     state: newNode_2
         SberCard:
-            actions = [{"buttons":[{ "name": "Будильник", "transition": "/newNode_5"}],"type":"buttons"}]
+            actions = [{"buttons":[{ "text": "Будильник", "transition": "/newNode_5"}],"type":"buttons"}]
             #actions = [{"buttons":[{"Будильник" -> /newNode_5}],"type":"buttons"}]
             imageUrl = https://sberdevices2.s3pd01.sbercloud.ru/smartmarket-smide-prod/84366/84367/7YmJXXjOU4KvqMkX.PNG
             #button = {"name":"","transition":""}
