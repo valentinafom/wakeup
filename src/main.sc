@@ -10,7 +10,7 @@ init:
             {
                 "type":"text",
                 "text":$context.session.lastAnswer
-            }            
+            },            
             {
                 "type":"text",
                 "text":"Что-то я повторяюсь"
