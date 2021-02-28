@@ -4,6 +4,7 @@ theme: /
     state: Start
         q!: $regex</start>
         q!: старт
+        q!: салют
         go!: /Hello_World
 
     state: Hello_World
