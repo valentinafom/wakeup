@@ -22,7 +22,7 @@ init:
         $context.session.lastAnswer = currentAnswer;
     });  
     
-theme: /
+theme: /newNode_2
 
     state: Start
         q!: $regex</start>
@@ -36,7 +36,15 @@ theme: /
             button = {"name":"","transition":"/newNode_4"}
             cardTitle = Нейробудильник Вставайка!
             description = Привет! Я - Вставайка. Я помогу подобрать оптимальное время утреннего подъёма и рассказать про привычки известных людей.
+        
         go!: /newNode_5
+        script:
+            var reply = {
+                "type":"text",
+                "tts":"мой ответ",
+            };
+            $response.replies = $response.replies || [];
+            $response.replies.push(reply);
     @IntentGroup
         {
           "boundsTo" : "/newNode_0",
