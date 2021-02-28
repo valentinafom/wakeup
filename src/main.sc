@@ -7,7 +7,7 @@ theme: /
 
     state: newNode_2
         SberCard:
-            actions = [{"buttons":[{ "name": "Будильник", "transition": "/newNode_6"}],"type":"buttons"}]
+            actions = [{"buttons":[{ "name": "Будильник", "transition": "/newNode_6"}, {"name" : "Расскажи про известных людей", "transition" : "/newNode_9"}],"type":"buttons"}]
             #actions = [{"buttons":[{"Будильник" -> /newNode_5}],"type":"buttons"}]
             imageUrl = https://sberdevices2.s3pd01.sbercloud.ru/smartmarket-smide-prod/84366/84367/7YmJXXjOU4KvqMkX.PNG
             #button = {"name":"","transition":""}
@@ -27,7 +27,7 @@ theme: /
           "actions" : [ {
             "buttons" : [ {
               "name" : "Будильник",
-              "transition" : "/newNode_5"
+              "transition" : "/newNode_6"
             }, {
               "name" : "Расскажи про известных людей",
               "transition" : "/newNode_2"
@@ -105,7 +105,7 @@ theme: /
 
     state: newNode_9
         a: Показать списком (Скажите "Список", или назовёте определённое имя (Скажите "Имя")?
-        go!: /newNode_29
+        go!: /celebrity_list
     @IntentGroup
         {
           "boundsTo" : "/newNode_9",
@@ -280,3 +280,11 @@ theme: /
           } ],
           "global" : false
         }
+    
+    state: celebrity_list
+        CardList:
+            actions = [{"buttons":[],"type":"buttons"}]
+            listTitle = это список
+            listSubtitle = подзаголовок
+            listItems = [{"title":"заголовок 1","value":"значение","subtitle":"подзаголовок","iconUrl":"https://sberdevices2.s3pd01.sbercloud.ru/smartmarket-smide-prod/84366/84367/fLQv202P6WiFKglU.jpg","hash":"36ba9472055289ea0614b28159b65405","action":{"name":"заголовок 1"}},{"title":"заголовок 2","value":"значение2","subtitle":"подзаголовок","iconUrl":"","hash":"","action":{"name":"заголовок 2"}}]
+            button = {"name":"кнопка","transition":"","enabled":false}
