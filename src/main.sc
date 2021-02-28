@@ -6,7 +6,7 @@ theme: /
         go!: /newNode_2
 
     state: newNode_2
-        card:
+        SberCard:
             actions = [{"buttons":[{ "name": "Будильник", "transition": "/newNode_5"}],"type":"buttons"}]
             #actions = [{"buttons":[{"Будильник" -> /newNode_5}],"type":"buttons"}]
             imageUrl = https://sberdevices2.s3pd01.sbercloud.ru/smartmarket-smide-prod/84366/84367/7YmJXXjOU4KvqMkX.PNG
@@ -14,11 +14,6 @@ theme: /
             button = {"name":"","transition":"/newNode_4"}
             cardTitle = Нейробудильник Вставайка!
             description = Привет! Я - Вставайка. Я помогу подобрать оптимальное время утреннего подъёма и рассказать про привычки известных людей.
-        buttons:
-            "Привет" -> /newNode_4
-            {text:"Отправить контакты"}  #// две кнопки будут расположены на одной строке
-        buttons:
-            "Вторая кнопка"
         script:
             var reply = {
                 "type":"text",
