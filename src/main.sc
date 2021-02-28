@@ -294,21 +294,22 @@ theme: /
         
             
     state: celebrity_random
-        go!: /celeb1
-        go!: /celeb2
-        go!: /celeb3
-        go!: /celeb4
-        go!: /celeb5
-        go!: /celeb6
-        go!: /celeb7
-        go!: /celeb8
-        go!: /celeb9
-        go!: /celeb10
-        go!: /celeb11
-        go!: /celeb12
-        go!: /celeb13
-        go!: /celeb14
-        go!: /celeb15
+        random:
+            go!: /celeb1
+            go!: /celeb2
+            go!: /celeb3
+            go!: /celeb4
+            go!: /celeb5
+            go!: /celeb6
+            go!: /celeb7
+            go!: /celeb8
+            go!: /celeb9
+            go!: /celeb10
+            go!: /celeb11
+            go!: /celeb12
+            go!: /celeb13
+            go!: /celeb14
+            go!: /celeb15
         
             
     state: celeb1
