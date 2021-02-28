@@ -312,7 +312,7 @@ theme: /
         
             
     state: celeb1
-       image: 
+       image: https://sberdevices2.s3pd01.sbercloud.ru/smartmarket-smide-prod/84366/84367/mRiI7Dc2S1qBv9UA.jpg
        a: Сальвадор Дали и Леонардо Да Винчи спали 6 раз в сутки по 20 минут каждые 4 часа.
        buttons:
            "Будильник" -> /alarm_intro
