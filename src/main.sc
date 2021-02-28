@@ -1,5 +1,5 @@
 
-theme: /newNode_2
+theme: /
 
     state: Start
         q!: $regex</start>
