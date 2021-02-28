@@ -5,7 +5,7 @@ init:
             return allAnswers;
         },"");
 
-        if(currentAnswer) {
+        if($context.session.lastAnswer) {
             if ($context.session.lastAnswer === currentAnswer) {
                 $context.response.replies = [
                 {
@@ -20,7 +20,7 @@ init:
             }
         }
         $context.session.lastAnswer = currentAnswer;
-    });  
+        });  
     
 theme: /newNode_2
 
