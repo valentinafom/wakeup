@@ -357,13 +357,7 @@ theme: /
             "value":"значение",
             "subtitle":"",
             "iconUrl":",
-            "action":{"transition": "/celeb15"}},
-            {"title":"заголовок 2",
-            "value":"значение2",
-            "subtitle":"",
-            "iconUrl":",
-            "hash":",
-            "action":{"name":"заголовок 2"}}]
+            "action":{"transition": "/celeb15"}}]
             button = {"name":"кнопка","transition":"","enabled":false}
             
     state: celebrity_random
