@@ -12,7 +12,7 @@
     "shared" : false
   },
   "intents" : [ {
-    "id" : 133968,
+    "id" : 133509,
     "path" : "/routine",
     "enabled" : true,
     "shared" : false,
@@ -28,7 +28,7 @@
   } ],
   "entities" : [ {
     "entity" : {
-      "id" : 75434,
+      "id" : 74506,
       "name" : "celebrity",
       "enabled" : true,
       "shared" : false,
@@ -38,82 +38,82 @@
       "noMorph" : false
     },
     "records" : [ {
-      "id" : 7509783,
+      "id" : 7508697,
       "type" : "synonyms",
       "rule" : [ "Тони Роббинс" ],
       "value" : ""
     }, {
-      "id" : 7509784,
+      "id" : 7508698,
       "type" : "synonyms",
       "rule" : [ "Ричард Брэнсон" ],
       "value" : ""
     }, {
-      "id" : 7512314,
+      "id" : 7508699,
       "type" : "synonyms",
       "rule" : [ "Сальвадор Дали" ],
       "value" : ""
     }, {
-      "id" : 7512315,
+      "id" : 7508700,
       "type" : "synonyms",
       "rule" : [ "Ричард Бакминстер Фуллер" ],
       "value" : ""
     }, {
-      "id" : 7512316,
+      "id" : 7508701,
       "type" : "synonyms",
       "rule" : [ "Леонардо Да Винчи" ],
       "value" : ""
     }, {
-      "id" : 7512317,
+      "id" : 7508702,
       "type" : "synonyms",
       "rule" : [ "Уинстон Черчиль" ],
       "value" : ""
     }, {
-      "id" : 7512318,
+      "id" : 7508703,
       "type" : "synonyms",
       "rule" : [ "Никола Тесла" ],
       "value" : ""
     }, {
-      "id" : 7512319,
+      "id" : 7508704,
       "type" : "synonyms",
       "rule" : [ "Марк Цукерберг" ],
       "value" : ""
     }, {
-      "id" : 7512320,
+      "id" : 7508705,
       "type" : "synonyms",
       "rule" : [ "Джек Дорси" ],
       "value" : ""
     }, {
-      "id" : 7512321,
+      "id" : 7508706,
       "type" : "synonyms",
       "rule" : [ "Илон Маск" ],
       "value" : ""
     }, {
-      "id" : 7512322,
+      "id" : 7508707,
       "type" : "synonyms",
       "rule" : [ "Барак Обама" ],
       "value" : ""
     }, {
-      "id" : 7512323,
+      "id" : 7508708,
       "type" : "synonyms",
       "rule" : [ "Опра Уинфри" ],
       "value" : ""
     }, {
-      "id" : 7512324,
+      "id" : 7508709,
       "type" : "synonyms",
       "rule" : [ "Стив Джобс" ],
       "value" : ""
     }, {
-      "id" : 7512325,
+      "id" : 7508710,
       "type" : "synonyms",
       "rule" : [ "Маргарет Тэтчер" ],
       "value" : ""
     }, {
-      "id" : 7512326,
+      "id" : 7508711,
       "type" : "synonyms",
       "rule" : [ "Бенджамин Франклин" ],
       "value" : ""
     }, {
-      "id" : 7512327,
+      "id" : 7508712,
       "type" : "synonyms",
       "rule" : [ "Арнольд Шварценеггер" ],
       "value" : ""
