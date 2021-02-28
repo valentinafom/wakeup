@@ -137,7 +137,7 @@ theme: /
     state: newNode_7
         InputNumber:
             actions = [{"buttons":[],"type":"buttons"}]
-            #prompt = Введите число
+            prompt = Введите число
             varName = age
             failureMessage = ["Введите число ваших полных лет"]
             then = /newNode_8
