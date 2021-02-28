@@ -23,7 +23,7 @@ theme: /
 
     state: newNode_4
         a: Я задам Вам пару вопросов, а нейросеть на основе Ваших ответов посоветует оптимальное время установки будильника на следующий день. Давайте попробуем!
-        go!: /newNode_7
+        go!: /ageInputScreen
 
     state: newNode_5
         state: 1
@@ -123,9 +123,9 @@ theme: /
 
     state: alarm_intro
         a: Для определения оптимальной продолжительности сна мне нужно узнать немного о Вас.
-        go!: /newNode_7
+        go!: /ageInputScreen
 
-    state: newNode_7
+    state: ageInputScreen
         InputNumber:
             actions = [{"buttons":[],"type":"buttons"}]
             prompt = Подскажите, сколько вам лет?
@@ -283,17 +283,86 @@ theme: /
             listTitle = это список
             listSubtitle = подзаголовок
             listItems = [{
-            "title":"заголовок 1",
+            "title":"Сальвадор Дали",
             "value":"значение",
-            "subtitle":"подзаголовок",
-            "iconUrl":"https://sberdevices2.s3pd01.sbercloud.ru/smartmarket-smide-prod/84366/84367/fLQv202P6WiFKglU.jpg",
-            "hash":"36ba9472055289ea0614b28159b65405",
-            "action":{"name":"заголовок 1"}},
+            "subtitle":"",
+            "iconUrl":",
+            "action":{"transition": "/celeb1"}},
+            {"title":"Ричард Бакминстер Фуллер",
+            "value":"значение",
+            "subtitle":"",
+            "iconUrl":",
+            "action":{"transition": "/celeb2"}},
+            {"title":"Уинстон Черчиль",
+            "value":"значение",
+            "subtitle":"",
+            "iconUrl":",
+            "action":{"transition": "/celeb3"}},
+            {"title":"Никола Тесла",
+            "value":"значение",
+            "subtitle":"",
+            "iconUrl":",
+            "action":{"transition": "/celeb4"}},
+            {"title":"Марк Цукерберг",
+            "value":"значение",
+            "subtitle":"",
+            "iconUrl":",
+            "action":{"transition": "/celeb5"}},
+            {"title":"Джек Дорси",
+            "value":"значение",
+            "subtitle":"",
+            "iconUrl":",
+            "action":{"transition": "/celeb6"}},
+            {"title":"Илон Маск",
+            "value":"значение",
+            "subtitle":"",
+            "iconUrl":",
+            "action":{"transition": "/celeb7"}},
+            {"title":"Барак Обама",
+            "value":"значение",
+            "subtitle":"",
+            "iconUrl":",
+            "action":{"transition": "/celeb8"}},
+            {"title":"Опра Уинфри",
+            "value":"значение",
+            "subtitle":"",
+            "iconUrl":",
+            "action":{"transition": "/celeb9"}},
+            {"title":"Стив Джобс",
+            "value":"значение",
+            "subtitle":"",
+            "iconUrl":",
+            "action":{"transition": "/celeb10"}},
+            {"title":"Маргарет Тэтчер",
+            "value":"значение",
+            "subtitle":"",
+            "iconUrl":",
+            "action":{"transition": "/celeb11"}},
+            {"title":"Бенджамин Франклин",
+            "value":"значение",
+            "subtitle":"",
+            "iconUrl":",
+            "action":{"transition": "/celeb12"}},
+            {"title":"Арнольд Шварценеггер",
+            "value":"значение",
+            "subtitle":"",
+            "iconUrl":",
+            "action":{"transition": "/celeb13"}},
+            {"title":"Тони Роббинс",
+            "value":"значение",
+            "subtitle":"",
+            "iconUrl":",
+            "action":{"transition": "/celeb14"}},
+            {"title":"Ричард Брэнсон",
+            "value":"значение",
+            "subtitle":"",
+            "iconUrl":",
+            "action":{"transition": "/celeb15"}},
             {"title":"заголовок 2",
             "value":"значение2",
-            "subtitle":"подзаголовок",
-            "iconUrl":"",
-            "hash":"",
+            "subtitle":"",
+            "iconUrl":",
+            "hash":",
             "action":{"name":"заголовок 2"}}]
             button = {"name":"кнопка","transition":"","enabled":false}
             
