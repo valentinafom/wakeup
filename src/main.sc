@@ -4,11 +4,10 @@ theme: /
         SberCard:
             actions = [{"buttons":[],"type":"buttons"}]
             imageUrl = https://sberdevices2.s3pd01.sbercloud.ru/smartmarket-smide-prod/84366/84367/7YmJXXjOU4KvqMkX.PNG
-            button = {"name":"","transition":""}
-            #button = {"name":"Во сколько вставать?","transition":"/newNode_4"}
+            #button = {"name":"","transition":""}
+            button = {"name":"Во сколько поставить будильник?","transition":"/newNode_4"}
             cardTitle = Нейробудильник Вставайка!
             description = Привет! Я - Вставайка. Я помогу подобрать оптимальное время сна и рассказать про утренние привычки известных людей.
-        go!: /newNode_5
     @IntentGroup
         {
           "boundsTo" : "/newNode_0",
