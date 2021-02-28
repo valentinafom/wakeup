@@ -7,7 +7,27 @@ theme: /
             button = {"name":"Во сколько вставать?","transition":"/newNode_4"}
             cardTitle = Нейробудильник Вставайка!
             description = Привет! Я - Вставайка. Я помогу подобрать оптимальное время сна и рассказать про утренние привычки известных людей.
-        
+    @IntentGroup
+        {
+          "boundsTo" : "/newNode_0",
+          "actions" : [ {
+            "buttons" : [ {
+              "name" : "Узнать стоимость",
+              "transition" : "/newNode_2"
+            }, {
+              "name" : "Узнать наличие",
+              "transition" : "/newNode_2"
+            }, {
+              "name" : "Узнать статус заказа",
+              "transition" : "/newNode_20"
+            }, {
+              "name" : "Сделать заказ",
+              "transition" : "/newNode_2"
+            } ],
+            "type" : "buttons"
+          } ],
+          "global" : true
+        }     
 
     state: newNode_4
         a: Нейросеть задаст вам пару вопросов и посоветует оптимальное время установки будильника на следующий день!  Просто скажи - "Будильник"
@@ -243,3 +263,17 @@ theme: /
 
     state: newNode_28
         EndSession:
+        
+    state: newNode_0
+        a: Нейросеть задаст вам пару вопросов и посоветует оптимальное время установки будильника на следующий день!  Просто скажи - "Будильник"
+        a: Познакомим с утренним расписанием известных людей, их рутиной ) Просто скажи - "Рутина"
+        go!: /newNode_5
+    @IntentGroup
+        {
+          "boundsTo" : "/newNode_4",
+          "actions" : [ {
+            "buttons" : [ ],
+            "type" : "buttons"
+          } ],
+          "global" : false
+        }        
