@@ -42,7 +42,7 @@ theme: /
         {
           "boundsTo" : "/newNode_4",
           "actions" : [ {
-         "buttons" : [ {
+            "buttons" : [ {
               "name" : "Узнать стоимость",
               "transition" : "/newNode_2"
             }, {
