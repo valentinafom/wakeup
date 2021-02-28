@@ -1,3 +1,21 @@
+init:
+    bind("postProcess", function($context) {
+        var currentAnswer = $context.response.replies.reduce(function(allAnswers, reply) {
+            allAnswers += reply.type === "text" ? reply.text : "";
+            return allAnswers;
+        },"");
+
+        if ($context.session.lastAnswer === currentAnswer) {
+            $context.response.replies = [
+            {
+                "type":"text",
+                "text":"Что-то я повторяюсь"
+            }
+            ];
+        }
+        $context.session.lastAnswer = currentAnswer;
+    });
+
 theme: /
 
     state: Start
@@ -6,7 +24,7 @@ theme: /
 
     state: newNode_2
         SberCard:
-            actions = [{"buttons":[{ "name": "Будильник", "transition" : "/newNode_5"}],"type":"buttons"}]
+            actions = [{"buttons":[{ "name": "Будильник", "transition": "/newNode_5"}],"type":"buttons"}]
             imageUrl = https://sberdevices2.s3pd01.sbercloud.ru/smartmarket-smide-prod/84366/84367/7YmJXXjOU4KvqMkX.PNG
             #button = {"name":"","transition":""}
             button = {"name":"","transition":"/newNode_4"}
