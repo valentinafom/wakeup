@@ -9,7 +9,7 @@ theme: /
 
     state: Hello_World
         SberCard:
-            actions = [{"buttons":[{ "name": "Будильник", "transition": "/alarm_intro"}, {"name" : "Расскажи про известных людей", "transition" : "/celebrity_Intro"}, {"name" : "Помощь", "transition" : "/help"}],"type":"buttons"}]
+            actions = [{"buttons":[{ "name": "Будильник", "transition": "/alarm_intro"}, {"name" : "Расскажи про известных людей", "transition" : "/celebrity_random"}, {"name" : "Помощь", "transition" : "/help"}],"type":"buttons"}]
             imageUrl = https://sberdevices2.s3pd01.sbercloud.ru/smartmarket-smide-prod/84366/84367/7YmJXXjOU4KvqMkX.PNG
             button = {"name":"","transition":"/newNode_4"}
             cardTitle = Нейробудильник Вставайка!
