@@ -3,14 +3,12 @@ theme: /
 
     state: Start
         q!: $regex</start>
-        go!: /newNode_2
+        go!: /Hello_World
 
-    state: newNode_2
+    state: Hello_World
         SberCard:
-            actions = [{"buttons":[{ "name": "Будильник", "transition": "/newNode_6"}, {"name" : "Расскажи про известных людей", "transition" : "/newNode_9"}],"type":"buttons"}]
-            #actions = [{"buttons":[{"Будильник" -> /newNode_5}],"type":"buttons"}]
+            actions = [{"buttons":[{ "name": "Будильник", "transition": "/alarm_intro"}, {"name" : "Расскажи про известных людей", "transition" : "/celebrity_Intro"}, {"name" : "Помощь", "transition" : "/Help"}],"type":"buttons"}]
             imageUrl = https://sberdevices2.s3pd01.sbercloud.ru/smartmarket-smide-prod/84366/84367/7YmJXXjOU4KvqMkX.PNG
-            #button = {"name":"","transition":""}
             button = {"name":"","transition":"/newNode_4"}
             cardTitle = Нейробудильник Вставайка!
             description = Привет! Я - Вставайка. Я помогу подобрать оптимальное время утреннего подъёма и рассказать про привычки известных людей.
@@ -21,21 +19,7 @@ theme: /
             };
             $response.replies = $response.replies || [];
             $response.replies.push(reply);
-    @IntentGroup
-        {
-          "boundsTo" : "/newNode_0",
-          "actions" : [ {
-            "buttons" : [ {
-              "name" : "Будильник",
-              "transition" : "/newNode_6"
-            }, {
-              "name" : "Расскажи про известных людей",
-              "transition" : "/newNode_2"
-            } ],
-            "type" : "buttons"
-          } ],
-          "global" : true
-        }     
+    
 
     state: newNode_4
         a: Я задам Вам пару вопросов, а нейросеть на основе Ваших ответов посоветует оптимальное время установки будильника на следующий день. Давайте попробуем!
@@ -49,13 +33,14 @@ theme: /
             e!: Время сна
             e!: Подъём
 
-            go!: /newNode_6
+            go!: /alarm_intro
 
         state: 2
             e!: Рутина
             e!: Покажи привычки
             e!: Привычки
-            go!: /newNode_9
+            e!: Привычки известных людей
+            go!: /celebrity_Intro
         init:
             $jsapi.bind({
                 type: "postProcess",
@@ -65,6 +50,7 @@ theme: /
                 }
             });
 
+#кандидат а удаление
     state: newNode_1
         a: Я могу подсказать наилучшее время для будильника!
         a: Даже показать утреннюю рутину известных людей!
@@ -79,16 +65,17 @@ theme: /
           } ],
           "global" : true
         }
+    
     state: newNode_3
         state: 1
             e!: Будильник
 
-            go!: /newNode_6
+            go!: /alarm_intro
 
         state: 2
             e!: Рутина
 
-            go!: /newNode_9
+            go!: /celebrity_Intro
 
         state: 3
             e!: Подсказка
@@ -103,12 +90,12 @@ theme: /
                 }
             });
 
-    state: newNode_9
+    state: celebrity_Intro
         a: Показать списком (Скажите "Список", или назовёте определённое имя (Скажите "Имя")?
         go!: /celebrity_list
     @IntentGroup
         {
-          "boundsTo" : "/newNode_9",
+          "boundsTo" : "/celebrity_Intro",
           "actions" : [ {
             "buttons" : [ ],
             "type" : "buttons"
@@ -119,12 +106,12 @@ theme: /
         state: 1
             e: Список
 
-            go!: /
+            go!: /celebrity_list
 
         state: 2
             e: Имя
 
-            go!: /
+            go!: /celeb1
         init:
             $jsapi.bind({
                 type: "postProcess",
@@ -134,7 +121,7 @@ theme: /
                 }
             });
 
-    state: newNode_6
+    state: alarm_intro
         a: Для определения оптимальной продолжительности сна мне нужно узнать немного о Вас.
         go!: /newNode_7
 
@@ -245,7 +232,7 @@ theme: /
         state: 1
             q: $AGREEMENT
 
-            go!: /newNode_9
+            go!: /celebrity_Intro
 
         state: 2
             q: $NEGATION
@@ -267,10 +254,19 @@ theme: /
     state: newNode_28
         EndSession:
         
-    state: newNode_0
+    state: Help
         a: Нейросеть задаст вам пару вопросов и посоветует оптимальное время установки будильника на следующий день!  Просто скажи - "Будильник"
         a: Познакомим с утренним расписанием известных людей, их рутиной ) Просто скажи - "Рутина"
         go!: /newNode_5
+        actions = [{"buttons":[{ "name": "Будильник", "transition": "/alarm_intro"}, {"name" : "Расскажи про известных людей", "transition" : "/celebrity_Intro"}],"type":"buttons"}]
+        script:
+            var reply = {
+                "type":"text",
+                "text":"Нейросеть задаст вам пару вопросов и посоветует оптимальное время установки будильника на следующий день!  Просто скажи - 'Будильник'. Так же я познакомлю тебя с утренними ритуалами известных людей. Просто скажи - 'Рутина'"
+                "tts":"Нейросеть задаст вам пару вопросов и посоветует оптимальное время установки будильника на следующий день. Так же я познакомлю тебя с утренними ритуалами известных людей",
+            };
+            $response.replies = $response.replies || [];
+            $response.replies.push(reply);        
     @IntentGroup
         {
           "boundsTo" : "/newNode_4",
@@ -283,8 +279,31 @@ theme: /
     
     state: celebrity_list
         CardList:
-            actions = [{"buttons":[],"type":"buttons"}]
+            actions = [{"buttons":[{ "name": "Будильник", "transition": "/alarm_intro"}, {"name" : "Случайная история", "transition" : "/celebrity_Intro","type":"buttons"}]
             listTitle = это список
             listSubtitle = подзаголовок
-            listItems = [{"title":"заголовок 1","value":"значение","subtitle":"подзаголовок","iconUrl":"https://sberdevices2.s3pd01.sbercloud.ru/smartmarket-smide-prod/84366/84367/fLQv202P6WiFKglU.jpg","hash":"36ba9472055289ea0614b28159b65405","action":{"name":"заголовок 1"}},{"title":"заголовок 2","value":"значение2","subtitle":"подзаголовок","iconUrl":"","hash":"","action":{"name":"заголовок 2"}}]
+            listItems = [{
+            "title":"заголовок 1",
+            "value":"значение",
+            "subtitle":"подзаголовок",
+            "iconUrl":"https://sberdevices2.s3pd01.sbercloud.ru/smartmarket-smide-prod/84366/84367/fLQv202P6WiFKglU.jpg",
+            "hash":"36ba9472055289ea0614b28159b65405",
+            "action":{"name":"заголовок 1"}},
+            {"title":"заголовок 2",
+            "value":"значение2",
+            "subtitle":"подзаголовок",
+            "iconUrl":"",
+            "hash":"",
+            "action":{"name":"заголовок 2"}}]
             button = {"name":"кнопка","transition":"","enabled":false}
+            
+    state: celeb1
+        actions = [{"buttons":[{ "name": "Будильник", "transition": "/alarm_intro"}, {"name" : "Расскажи про известных людей", "transition" : "/celebrity_Intro"}],"type":"buttons"}]
+        script:
+            var reply = {
+                "type":"text",
+                "text":"Сальвадор Дали и Леонардо Да Винчи спали 6 раз в сутки по 20 минут каждые 4 часа."
+                "tts":"Сальвадор Дали и Леонардо Да Винчи спали 6 раз в сутки по 20 минут каждые 4 часа.",
+            };
+            $response.replies = $response.replies || [];
+            $response.replies.push(reply);   
