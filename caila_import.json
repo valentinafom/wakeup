@@ -11,7 +11,21 @@
     "timezone" : "UTC",
     "shared" : false
   },
-  "intents" : [ ],
+  "intents" : [ {
+    "id" : 133968,
+    "path" : "/routine",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ ],
+    "patterns" : [ ],
+    "slots" : [ {
+      "name" : "routine",
+      "entity" : "celebrity",
+      "required" : true,
+      "prompts" : [ "Покажи рутину $celebrity" ],
+      "array" : true
+    } ]
+  } ],
   "entities" : [ {
     "entity" : {
       "id" : 75434,
