@@ -278,23 +278,11 @@ theme: /
     
     state: celebrity_list
         CardList:
-            actions = [{"buttons":[{ "name": "Будильник", "transition": "/alarm_intro"}, {"name" : "Случайная история", "transition" : "/celebrity_Intro"}, {"name" : "Помощь", "transition" : "/help"}], "type":"buttons"}]
+            actions = [{"buttons":[],"type":"buttons"}]
             listTitle = это список
             listSubtitle = подзаголовок
-            listItems = [{
-            "title":"заголовок 1",
-            "value":"значение",
-            "subtitle":"подзаголовок",
-            "iconUrl":"https://sberdevices2.s3pd01.sbercloud.ru/smartmarket-smide-prod/84366/84367/fLQv202P6WiFKglU.jpg",
-            "hash":"36ba9472055289ea0614b28159b65405",
-            "action":{"name":"заголовок 1"}},
-            {"title":"заголовок 2",
-            "value":"значение2",
-            "subtitle":"подзаголовок",
-            "iconUrl":"",
-            "hash":"",
-            "action":{"name":"заголовок 2"}}]
-            button = {"name":"кнопка","transition":"","enabled":false} 
+            listItems = [{"title":"заголовок 1","value":"значение","subtitle":"подзаголовок","iconUrl":"https://sberdevices2.s3pd01.sbercloud.ru/smartmarket-smide-prod/84366/84367/fLQv202P6WiFKglU.jpg","hash":"36ba9472055289ea0614b28159b65405","action":{"name":"заголовок 1"}},{"title":"заголовок 2","value":"значение2","subtitle":"подзаголовок","iconUrl":"","hash":"","action":{"name":"заголовок 2"}}]
+            button = {"name":"кнопка","transition":"","enabled":false}
         
             
     state: celebrity_random
