@@ -20,7 +20,7 @@ init:
             }
         }
         $context.session.lastAnswer = currentAnswer;
-        });  
+    });  
     
 theme: /newNode_2
 
