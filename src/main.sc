@@ -42,10 +42,22 @@ theme: /
         {
           "boundsTo" : "/newNode_4",
           "actions" : [ {
-            "buttons" : [ ],
+          "buttons" : [ {
+              "name" : "Узнать стоимость",
+              "transition" : "/newNode_2"
+            }, {
+              "name" : "Узнать наличие",
+              "transition" : "/newNode_2"
+            }, {
+              "name" : "Узнать статус заказа",
+              "transition" : "/newNode_20"
+            }, {
+              "name" : "Сделать заказ",
+              "transition" : "/newNode_2"
+            } ],
             "type" : "buttons"
           } ],
-          "global" : false
+          "global" : true
         }
     state: newNode_5
         state: 1
@@ -60,7 +72,6 @@ theme: /
         state: 2
             e!: Рутина
             e!: Покажи привычки
-
             go!: /newNode_9
         init:
             $jsapi.bind({
