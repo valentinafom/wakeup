@@ -319,98 +319,98 @@ theme: /
            "Помощь" -> /help
            "Ещё" -> /celebrity_random
     state: celeb2
-       image: 
+       image: https://sberdevices2.s3pd01.sbercloud.ru/smartmarket-smide-prod/84366/84367/ZUx1Ysd1z6A6V87l.jpg
        a: Американский архитектор, дизайнер, инженер, изобретатель, философ, математик, писатель, поэт спал 4 раза в сутки по 30 минут каждые 6 часов.
        buttons:
            "Будильник" -> /alarm_intro
            "Помощь" -> /help
            "Ещё" -> /celebrity_random
     state: celeb3
-       image: 
+       image: https://sberdevices2.s3pd01.sbercloud.ru/smartmarket-smide-prod/84366/84367/kCQDkoTcoGiwYCb4.jpg
        a: Уинстон Черчиль спал 6,5 часов в сутки: 5 часов ночью и полтора часа днем. Он просыпался в 7:30, завтракал, читал газеты и работал, находясь в постели. Только к 11:00 Черчилль выходил на прогулку в сад и наливал себе виски с содовой. Не все так могут - продуктивно работать в постели!
        buttons:
            "Будильник" -> /alarm_intro
            "Помощь" -> /help
            "Ещё" -> /celebrity_random
     state: celeb4
-       image: 
+       image: https://sberdevices2.s3pd01.sbercloud.ru/smartmarket-smide-prod/84366/84367/TzmuVboRsWOVuMhP.jpg
        a: Тесла спал всего 2 часа ночью и 20 минут днём
        buttons:
            "Будильник" -> /alarm_intro
            "Помощь" -> /help
            "Ещё" -> /celebrity_random
     state: celeb5
-       image: 
+       image: https://sberdevices2.s3pd01.sbercloud.ru/smartmarket-smide-prod/84366/84367/4X2kMJfjB3yjmAEd.jpg
        a: Мне не удалось найти сколько спит Марк Цукерберг, но с утра он не заморачивается выбором одежды - это позволяет ему принимать на одно решение в день меньше
        buttons:
            "Будильник" -> /alarm_intro
            "Помощь" -> /help
            "Ещё" -> /celebrity_random
     state: celeb6
-       image: 
+       image: https://sberdevices2.s3pd01.sbercloud.ru/smartmarket-smide-prod/84366/84367/mRiI7Dc2S1qBv9UA.jpg
        a: После пробуждения создатель Твиттера занимается медитацией, а потом отправляется на пробежку в 10 километров.
        buttons:
            "Будильник" -> /alarm_intro
            "Помощь" -> /help
            "Ещё" -> /celebrity_random
     state: celeb7
-       image: 
+       image: https://sberdevices2.s3pd01.sbercloud.ru/smartmarket-smide-prod/84366/84367/4X2kMJfjB3yjmAEd.jpg
        a: Миллиардер очень много работает, но всегда спит по шесть часов. Его утро начинается в 7:00, первым делом он проверяет почту и в течение получаса отвечает на самые важные и срочные письма. Бизнесмен не всегда успевает позавтракать, но никогда не пренебрегает душем.
        buttons:
            "Будильник" -> /alarm_intro
            "Помощь" -> /help
            "Ещё" -> /celebrity_random
     state: celeb8
-       image: 
+       image: https://sberdevices2.s3pd01.sbercloud.ru/smartmarket-smide-prod/84366/84367/4X2kMJfjB3yjmAEd.jpg
        a: В 6:45 утра экс-президент США обязательно тренируется, совмещая силовые упражнения с кардио. После завтракает с семьёй и помогает дочкам собраться в школу.
        buttons:
            "Будильник" -> /alarm_intro
            "Помощь" -> /help
            "Ещё" -> /celebrity_random
     state: celeb9
-       image: 
+       image: https://sberdevices2.s3pd01.sbercloud.ru/smartmarket-smide-prod/84366/84367/4X2kMJfjB3yjmAEd.jpg
        a: Одна из самых влиятельных женщин в мире по версии журнала Forbes начинает своё утро с 20 минут медитации, затем не менее 15 минут на беговой дорожке и — самое важное — сбалансированный завтрак, состоящий из белков, жиров и сложных углеводов.
        buttons:
            "Будильник" -> /alarm_intro
            "Помощь" -> /help
            "Ещё" -> /celebrity_random
     state: celeb10
-       image: 
+       image: https://sberdevices2.s3pd01.sbercloud.ru/smartmarket-smide-prod/84366/84367/4X2kMJfjB3yjmAEd.jpg
        a: Создатель IPhone просыпался в шесть утра, подходил к зеркалу и спрашивал себя: «Если бы сегодня был последний день моей жизни, был бы я счастлив от того, что собираюсь сделать?». Работал до тех пор, пока не проснулись дети, завтракал с семьей, а затем опять возвращался к работе.
        buttons:
            "Будильник" -> /alarm_intro
            "Помощь" -> /help
            "Ещё" -> /celebrity_random
     state: celeb11
-       image: 
+       image: https://sberdevices2.s3pd01.sbercloud.ru/smartmarket-smide-prod/84366/84367/4X2kMJfjB3yjmAEd.jpg
        a: Даже затянувшиеся допоздна деловые встречи не мешали Железной леди проснуться следующим утром в пять часов, чтобы послушать любимую передачу о еде и сельском хозяйстве по радио.
        buttons:
            "Будильник" -> /alarm_intro
            "Помощь" -> /help
            "Ещё" -> /celebrity_random
     state: celeb12
-       image: 
+       image: https://sberdevices2.s3pd01.sbercloud.ru/smartmarket-smide-prod/84366/84367/4X2kMJfjB3yjmAEd.jpg
        a: У Бенджамина Франклина день буквально был расписан по часам. Утренняя рутина занимала у политика три часа. Он просыпался в пять утра, умывался, завтракал и планировал свой день. А ещё утром Франклин обязательно задавал себе вопрос: «Что хорошего я сделаю сегодня?» И в восемь он уже начинал работать.
        buttons:
            "Будильник" -> /alarm_intro
            "Помощь" -> /help
            "Ещё" -> /celebrity_random
     state: celeb13
-       image: 
+       image: https://sberdevices2.s3pd01.sbercloud.ru/smartmarket-smide-prod/84366/84367/ZUx1Ysd1z6A6V87l.jpg
        a: Вот так выгрядит утро терминатора: подъем в 5 утра, чтение новостей, проверка почты, 45-минутные упражнения, завтрак, душ и вперёд за работу!
        buttons:
            "Будильник" -> /alarm_intro
            "Помощь" -> /help
            "Ещё" -> /celebrity_random
     state: celeb14
-       image: 
+       image: https://sberdevices2.s3pd01.sbercloud.ru/smartmarket-smide-prod/84366/84367/mRiI7Dc2S1qBv9UA.jpg
        a: Так выглядит утро известного инфоцыгана Тони Робинса: ранний подъем, дыхательные упражнения, десятиминутная визуализация, 15-30 минут физических упражнений
        buttons:
            "Будильник" -> /alarm_intro
            "Помощь" -> /help
            "Ещё" -> /celebrity_random
     state: celeb15
-       image: 
+       image: https://sberdevices2.s3pd01.sbercloud.ru/smartmarket-smide-prod/84366/84367/mRiI7Dc2S1qBv9UA.jpg
        a: Один из самых богатых жителей Великобритании с состоянием более чем 5 миллиардов долларов США просыпается в 5:45, затем идёт плавать или играть в теннис, после таких утренних упражнений завтракает.
        buttons:
            "Будильник" -> /alarm_intro
