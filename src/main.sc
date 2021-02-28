@@ -98,7 +98,7 @@ theme: /
             });
 
     state: celebrity_Intro
-        a: Посмотрим привычки известных людей? ||tts="Я подобрала для Вас одних из самых успешных людей на сегодняшний день!Возможно, какие-то привычки Вы возьмёте себе не вооружение! Давай, начнём?", ttsEnabled = true, ssmlEnabled = false
+        a: Посмотрим привычки известных людей? ||tts="Я подобрала для Вас одних из самых успешных людей на сегодняшний день! Возможно, какие-то привычки Вы возьмёте себе не вооружение! Давай, начнём?", ttsEnabled = true, ssmlEnabled = false
         go!:  /celeb_agreement
         buttons:
             "Будильник" -> /alarm_intro
@@ -235,7 +235,7 @@ theme: /
         state: 1
             q: $AGREEMENT
 
-            go!: /celebrity_Intro
+            go!: /celebrity_random
 
         state: 2
             q: $NEGATION
