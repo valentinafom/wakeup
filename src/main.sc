@@ -1,29 +1,4 @@
-init:
-    bind("postProcess", function($context) {
-        if(allAnswers) {
-            var currentAnswer = $context.response.replies.reduce(function(allAnswers, reply) {
-            allAnswers += reply.type === "text" ? reply.text : "";
-            return allAnswers;
-        },"");
 
-            if($context.session.lastAnswer) {
-            if ($context.session.lastAnswer === currentAnswer) {
-                $context.response.replies = [
-                {
-                    "type":"text",
-                    "text":$context.session.lastAnswer
-                },            
-                {
-                    "type":"text",
-                    "text":"Что-то я повторяюсь"
-                }
-                ];
-            }
-        }
-            $context.session.lastAnswer = currentAnswer;
-        }
-    });  
-    
 theme: /newNode_2
 
     state: Start
